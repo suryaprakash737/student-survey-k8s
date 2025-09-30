@@ -1,0 +1,183 @@
+<!--
+File: error.html
+Author: Suryaprakash Uppalapati
+Date: 11/08/25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Error 404</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-number {
+            font-size: 8rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        .error-text {
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .btn-home {
+            background-color: #fff;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+        .btn-home:hover {
+            background-color: #f1f1f1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .shape {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<div class="error-container">
+    <div class="w3-container w3-center">
+        <div class="w3-row">
+            <div class="w3-col s12">
+                <div class="error-number w3-animate-top">404</div>
+                <h2 class="error-text w3-animate-opacity">Oops! Page Not Found</h2>
+                <p class="error-text w3-large w3-animate-opacity" style="animation-delay: 0.3s;">
+                    The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+                </p>
+                
+                <div class="w3-margin-top w3-animate-opacity" style="animation-delay: 0.6s;">
+                    <a href="index.html" class="w3-button w3-round-large w3-padding-large btn-home w3-hover-shadow">
+                        <i class="fa fa-home w3-margin-right"></i>Return to Homepage
+                    </a>
+                </div>
+                
+                <div class="w3-margin-top w3-animate-opacity" style="animation-delay: 0.9s;">
+                    <p class="error-text">
+                        <i class="fa fa-info-circle w3-margin-right"></i>
+                        If you believe this is an error, please contact the site administrator.
+                    </p>
+                </div>
+                
+                <div class="w3-margin-top w3-animate-opacity" style="animation-delay: 1.2s;">
+                    <div class="w3-row w3-margin-top">
+                        <div class="w3-col s4">
+                            <a href="index.html" class="w3-button w3-round w3-white w3-text-indigo w3-hover-pale-blue">
+                                <i class="fa fa-home"></i><br>Home
+                            </a>
+                        </div>
+                        <div class="w3-col s4">
+                            <a href="survey.html" class="w3-button w3-round w3-white w3-text-indigo w3-hover-pale-blue">
+                                <i class="fa fa-clipboard"></i><br>Survey
+                            </a>
+                        </div>
+                        <div class="w3-col s4">
+                            <a href="mailto:student@university.edu" class="w3-button w3-round w3-white w3-text-indigo w3-hover-pale-blue">
+                                <i class="fa fa-envelope"></i><br>Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Add some interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click effect to shapes
+    const shapes = document.querySelectorAll('.shape');
+    shapes.forEach(shape => {
+        shape.addEventListener('click', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'float 6s ease-in-out infinite';
+            }, 100);
+        });
+    });
+    
+    // Add subtle mouse movement effect
+    document.addEventListener('mousemove', function(e) {
+        const shapes = document.querySelectorAll('.shape');
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.05;
+            const xMove = (x - 0.5) * speed * 50;
+            const yMove = (y - 0.5) * speed * 50;
+            shape.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        });
+    });
+});
+</script>
+
+</body>
+</html>

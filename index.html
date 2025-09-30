@@ -1,0 +1,182 @@
+<!--
+File: index.html
+Author: Suryaprakash Uppalapati
+Date: 11/08/25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+        }
+       
+        /* Navbar  */
+        #myNavbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        #myNavbar a {
+            color: #333 !important;
+        }
+        
+        #myNavbar a:hover {
+            background-color: #f1f1f1 !important;
+            color: #000 !important;
+        }
+        
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1600px) {
+            .bgimg-1 {
+                background-attachment: scroll;
+                min-height: 400px;
+            }
+        }
+        
+        /* GMU Colors */
+        .gmu-green {
+            background-color: #006633 !important;
+        }
+        
+        .gmu-gold {
+            background-color: #FFCC33 !important;
+        }
+    </style>
+</head>
+<body id="home">
+
+<!-- Navbar (fixed on top) -->
+<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+        <a href="survey.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-clipboard"></i> SURVEY</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+
+    <!-- Navbar on small screens like phones and tabs -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <a href="survey.html" class="w3-bar-item w3-button" onclick="toggleFunction()">SURVEY</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    </div>
+</div>
+
+
+
+<!-- About Section -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">ABOUT ME</h3>    
+    <div class="w3-row">
+        <div class="w3-col m6 w3-center w3-padding-large">
+            <p><b><i class="fa fa-user w3-margin-right"></i>My Profile</b></p><br>
+            <img src="image_swe.jpg" alt="Student Profile" width="300" height="300">
+        </div>
+
+        <!-- Hiding this text on small devices -->
+        <div class="w3-col m6 w3-hide-small w3-padding-large">
+            <p>Hello and welcome to my personal class homepage! I'm a dedicated graduate student pursuing my Master's in Computer Science at George Mason University. I'm passionate about learning and exploring new technologies in the field of computer science.</p>
+            
+            <p>I created this homepage as part of my web development assignment, incorporating modern design principles and responsive layouts. The site features a clean, professional design using W3.CSS framework, ensuring it looks great on all devices from desktop computers to mobile phones.</p>
+            
+            <p>As a graduate student at GMU, I'm focused on advancing my knowledge in various areas of computer science including software engineering, data structures, algorithms, and web technologies. This platform serves as a digital representation of my academic journey.</p>
+            
+            <p>Feel free to explore the site and don't forget to check out the survey page - your feedback is valuable to our academic community!</p>
+        </div>
+    </div>
+    
+    
+<!-- Academic Focus Section -->
+<div class="w3-content w3-container w3-padding-64" id="academics">
+    <h3 class="w3-center">MY ACADEMIC FOCUS AT GMU</h3>
+    <p class="w3-center"><em>Exploring computer science and building technical solutions</em></p>
+
+    <div class="w3-row-padding w3-center w3-margin-top">
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-padding-16 gmu-green w3-text-white" style="min-height:250px">
+                <i class="fa fa-graduation-cap w3-margin-bottom" style="font-size:48px"></i>
+                <h4>Master's Program</h4>
+                <p>Pursuing MS in Computer Science at George Mason University, focusing on advanced algorithms, software engineering principles, and modern development practices.</p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-card w3-container w3-padding-16 gmu-gold w3-text-black" style="min-height:250px">
+                <i class="fa fa-laptop w3-margin-bottom" style="font-size:48px"></i>
+                <h4>Technical Skills</h4>
+                <p>Developing expertise in web technologies, cloud computing, database systems, and software architecture through hands-on projects and coursework.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">CONTACT INFORMATION</h3>
+    <p class="w3-center"><em>George Mason University Graduate Student</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m4 w3-container">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" class="w3-image w3-round" style="width:100%" alt="George Mason University Campus">
+        </div>
+        <div class="w3-col m8 w3-panel">
+            <div class="w3-large w3-margin-bottom">
+                <i class="fa fa-university fa-fw w3-hover-text-black w3-xlarge w3-margin-right gmu-green w3-text-white w3-padding-small w3-round"></i> George Mason University<br><br>
+                <i class="fa fa-graduation-cap fa-fw w3-hover-text-black w3-xlarge w3-margin-right gmu-green w3-text-white w3-padding-small w3-round"></i> Master's in Computer Science<br><br>
+                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right gmu-green w3-text-white w3-padding-small w3-round"></i> (571) 269-9148<br><br>
+                <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right gmu-green w3-text-white w3-padding-small w3-round"></i> suppala6@gmu.edu<br>
+            </div>
+            <p><strong>Don't forget to visit our <a href="survey.html" class="w3-text-blue w3-hover-text-green">Student Survey</a> page to share your feedback about the university!</strong></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center gmu-green w3-padding-64 w3-text-white">
+    <a href="#home" class="w3-button w3-light-grey w3-text-black"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    
+    <p>George Mason University - Master's in Computer Science</p>
+</footer>
+
+<script>
+//  Toggling the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
